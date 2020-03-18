@@ -1,0 +1,37 @@
+@import url('all.min.css');
+@import url('animation.css');
+@import url('fontello.css');
+@import url('fontello-codes.css');
+@import url('fontello-embedded.css');
+
+@font-face {
+  font-family: 'fontello';
+  src: url('fontello.eot?87642909');
+  src: url('fontello.eot?87642909#iefix') format('embedded-opentype'),
+    url('fontello.woff?87642909') format('woff'),
+    url('fontello.ttf?87642909') format('truetype'),
+    url('fontello.svg?87642909#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PTRootUIWebRegular';
+  src: url('PT Root UI_Regular.eot');
+  src: url('PT Root UI_Regular.eot?#iefix') format('embedded-opentype'),
+    url('PT Root UI_Regular.woff2') format('woff2'),
+    url('PT Root UI_Regular.woff') format('woff'),
+    url('PT Root UI_Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('Geometria.otf');
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('Muller.otf');
+}

@@ -15,15 +15,42 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <style>
+      @import url('./fonts/fonts.css');
+      .photo {
+        display: flex;
+        max-width: 450px;
+        max-height: 450px;
+        cursor: url('note.png'), auto;
+      }
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+      .slider:before {
+        position: absolute;
+        content: '';
+        height: 20px;
+        width: 20px;
+        left: 0px;
+        bottom: 4px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        box-shadow: 0 0px 7.5px #2020203d;
+        background: #fefefe url('./night.png');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(12px);
+        -ms-transform: translateX(12px);
+        transform: translateX(12px);
+        background: #fefefe url('./sunny.png');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    </style>
     <title>React App</title>
   </head>
   <body>
