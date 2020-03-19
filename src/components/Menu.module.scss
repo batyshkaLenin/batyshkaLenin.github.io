@@ -1,0 +1,22 @@
+.menu {
+  font-family: 'Muller', serif;
+  display: flex;
+  padding: 10px;
+}
+.menuItem {
+  list-style: none;
+  margin-right: 50px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &.active {
+    list-style: '▶';
+    color: #f0393b;
+  }
+  & > a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: 5px;
+    font-size: x-large;
+  }
+}

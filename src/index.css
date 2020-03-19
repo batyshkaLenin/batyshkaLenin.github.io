@@ -47,26 +47,6 @@ footer {
   display: flex;
   flex-direction: column;
 }
-.menu-item > a {
-  color: var(--color-text);
-  text-decoration: none;
-  margin-left: 5px;
-  font-size: x-large;
-}
-.menu {
-  font-family: 'Muller';
-  display: flex;
-  padding: 10px;
-}
-.menu-item {
-  list-style: none;
-  margin-right: 50px;
-}
-
-.menu-item.active {
-  list-style: '▶';
-  color: #f0393b;
-}
 .text {
   display: flex;
   max-width: 600px;

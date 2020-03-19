@@ -47,7 +47,7 @@ const Layout = (props: IProps) => {
     >
       <Header theme={theme} changeTheme={changeTheme} />
       <ErrorBoundary>
-        <main className="container mt-3">{props.children}</main>
+        <main>{props.children}</main>
       </ErrorBoundary>
       <Footer />
     </div>

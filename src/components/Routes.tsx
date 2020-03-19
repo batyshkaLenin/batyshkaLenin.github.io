@@ -16,7 +16,7 @@ const Routes = React.memo(() => {
           <Blog />
         </Route>
         <Route path="/post/:slug" exact component={Post} />
-        <Route path="/registration/">
+        <Route path="/music/">
           <Music />
         </Route>
       </Switch>
