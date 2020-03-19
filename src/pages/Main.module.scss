@@ -20,6 +20,10 @@
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .me {
+    max-width: 350px;
+    max-height: 350px;
+  }
   .photo {
     max-width: 350px;
     max-height: 350px;
