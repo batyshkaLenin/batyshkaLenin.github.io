@@ -14,12 +14,6 @@ body {
   color: var(--color-text);
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap-reverse;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 a {
   color: var(--color-text);
   text-decoration: none;
@@ -77,6 +71,13 @@ footer {
 .contact-item {
   list-style: none;
   margin-right: 50px;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .switch {
