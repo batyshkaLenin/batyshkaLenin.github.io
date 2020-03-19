@@ -13,39 +13,6 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <style>
       @import url('./fonts/fonts.css');
-      .photo {
-        display: flex;
-        max-width: 450px;
-        max-height: 450px;
-        cursor: url('note.png'), auto;
-      }
-
-      .slider:before {
-        position: absolute;
-        content: '';
-        height: 20px;
-        width: 20px;
-        left: 0px;
-        bottom: 4px;
-        top: 0;
-        bottom: 0;
-        margin: auto 0;
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
-        box-shadow: 0 0px 7.5px #2020203d;
-        background: #fefefe url('./night.png');
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-
-      input:checked + .slider:before {
-        -webkit-transform: translateX(12px);
-        -ms-transform: translateX(12px);
-        transform: translateX(12px);
-        background: #fefefe url('./sunny.png');
-        background-repeat: no-repeat;
-        background-position: center;
-      }
     </style>
     <title>Александр Сидоренко</title>
     <link

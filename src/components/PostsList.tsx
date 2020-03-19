@@ -23,21 +23,21 @@ const PostList = (props: BlogBoxProps) => {
   return (
     <Link to={`/post/${props.slug}`}>
       <div>
-        <article className="post">
-          <div className="post-info">
-            <h3 className="post-title">{props.title}</h3>
+        <article>
+          <div>
+            <h3>{props.title}</h3>
           </div>
 
-          <div className="description">
+          <div>
             <div>{props.description}</div>
           </div>
 
-          <div className="tags">
+          <div>
             {props.tags && props.tags.length > 0 && (
               <>
                 Теги:{' '}
                 {props.tags.map(tag => (
-                  <span className="tag-item">{tag} </span>
+                  <span>{tag} </span>
                 ))}
               </>
             )}

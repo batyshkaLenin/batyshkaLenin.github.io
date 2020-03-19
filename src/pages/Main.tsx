@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from 'src/components/Layout'
+import styles from './Main.module.scss'
 
 const Main = () => {
   const play = () => {
@@ -19,7 +20,7 @@ const Main = () => {
       <section className="page">
         <section className="text">
           <article>
-            <h1>Александр Сидоренко</h1>
+            <h1 className={styles.name}>Александр Сидоренко</h1>
             <p>
               "Это алхимия, блядь!" - говорю я, когда пишу код. Программист,
               машинист, вуаерист. Профессионально выгораю и мастерски чешу левую
@@ -29,9 +30,9 @@ const Main = () => {
             </p>
           </article>
         </section>
-        <section onMouseOver={play} onMouseOut={pause} className="photo">
+        <section onMouseOver={play} onMouseOut={pause} className={styles.photo}>
           <img
-            className="me"
+            className={styles.me}
             src="me.png"
             alt="Александр Сидоренко в мексиканской шляпе и с банджо в руках"
           />

@@ -1,5 +1,7 @@
 import React from 'react'
 import Menu from './Menu'
+import styles from './Header.module.scss'
+import classNames from 'classnames'
 
 interface IProps {
   theme: string
@@ -35,22 +37,22 @@ const Header = (props: IProps) => {
   return (
     <header>
       <Menu />
-      <div className="settings">
+      <div className={styles.settings}>
         <a
           id="speaker"
-          className={mute ? 'speaker mute' : 'speaker'}
+          className={classNames(styles.speaker, mute ? styles.mute : '')}
           onClick={() => toggleMute(!mute)}
         >
           <span />
         </a>
-        <label id="switch" className="switch">
+        <label id="switch" className={styles.switch}>
           <input
             type="checkbox"
             onChange={props.changeTheme}
             id="slider"
             checked={props.theme === 'light'}
           />
-          <span className="slider round" />
+          <span className={classNames(styles.slider, styles.round)} />
         </label>
       </div>
     </header>
