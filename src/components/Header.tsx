@@ -11,6 +11,14 @@ interface IProps {
 const Header = (props: IProps) => {
   const router = window.location
   const [mute, setMute] = React.useState<boolean>(true)
+  const isTouchDevice = () => {
+    try {
+      document.createEvent('TouchEvent')
+      return true
+    } catch (e) {
+      return false
+    }
+  }
   const toggleMute = (mute: boolean) => {
     localStorage.setItem('muted', `${mute}`)
     if (mute) {
@@ -38,13 +46,15 @@ const Header = (props: IProps) => {
     <header>
       <Menu />
       <div className={styles.settings}>
-        <a
-          id="speaker"
-          className={classNames(styles.speaker, mute ? styles.mute : '')}
-          onClick={() => toggleMute(!mute)}
-        >
-          <span />
-        </a>
+        {!isTouchDevice() && (
+          <a
+            id="speaker"
+            className={classNames(styles.speaker, mute ? styles.mute : '')}
+            onClick={() => toggleMute(!mute)}
+          >
+            <span />
+          </a>
+        )}
         <label id="switch" className={styles.switch}>
           <input
             type="checkbox"

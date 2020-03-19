@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styles from './PostsList.module.scss'
 
 const defaultProps = {
   author: '',
@@ -24,12 +25,12 @@ const PostList = (props: BlogBoxProps) => {
     <Link to={`/post/${props.slug}`}>
       <div>
         <article>
-          <div>
+          <div className={styles.title}>
             <h3>{props.title}</h3>
           </div>
 
           <div>
-            <div>{props.description}</div>
+            <div className={styles.description}>{props.description}</div>
           </div>
 
           <div>

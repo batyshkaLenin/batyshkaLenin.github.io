@@ -31,17 +31,7 @@ h6 {
 p {
   font-size: larger;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  min-width: 420px;
-}
-footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap-reverse;
-}
+
 .root {
   margin: 50px;
   display: flex;
@@ -52,24 +42,6 @@ footer {
   max-width: 600px;
 }
 
-.rights {
-  display: flex;
-  align-items: flex-end;
-}
-.copy {
-  margin-right: 10px;
-}
-.design {
-  margin-left: 10px;
-}
-.contact-list {
-  display: flex;
-}
-.contact-item {
-  list-style: none;
-  margin-right: 50px;
-}
-
 .page {
   display: flex;
   flex-wrap: wrap-reverse;
@@ -77,10 +49,8 @@ footer {
   align-items: flex-start;
 }
 
-.icon {
-  width: 30px;
-  height: 30px;
-}
-#icon {
-  fill: var(--color-text);
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .root {
+    margin: 5px;
+  }
 }
