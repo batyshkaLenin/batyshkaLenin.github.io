@@ -12,6 +12,18 @@
   max-height: 450px;
 }
 
+.page {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.text {
+  display: flex;
+  max-width: 600px;
+}
+
 .photo {
   display: flex;
   max-width: 450px;

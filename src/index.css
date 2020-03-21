@@ -37,17 +37,6 @@ p {
   display: flex;
   flex-direction: column;
 }
-.text {
-  display: flex;
-  max-width: 600px;
-}
-
-.page {
-  display: flex;
-  flex-wrap: wrap-reverse;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .root {
