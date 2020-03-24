@@ -1,5 +1,8 @@
 {
-  "static": {
-    "rewrites": [{ "source": "**", "destination": "/index.html" }]
-  }
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/music/", "dest": "/index.html" },
+    { "src": "/blog/", "dest": "/index.html" },
+    { "src": "/post/([^/]+)", "dest": "/index.html" }
+  ]
 }
