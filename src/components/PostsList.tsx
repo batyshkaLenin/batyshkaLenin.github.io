@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './PostsList.module.scss'
+import SkeletonText from './SkeletonText'
 
 const defaultProps = {
   author: '',
@@ -10,10 +11,10 @@ const defaultProps = {
 }
 
 interface BlogBoxProps {
-  id: string
-  slug: string
-  title: string
-  description: string
+  id?: string
+  slug?: string
+  title?: string
+  description?: string
   readingTime?: string
   author?: string
   publishedDate?: string
@@ -26,11 +27,21 @@ const PostList = (props: BlogBoxProps) => {
       <div>
         <article>
           <div className={styles.title}>
-            <h3>{props.title}</h3>
+            <h3>{props.title ? props.title : <SkeletonText width={250} />}</h3>
           </div>
 
           <div>
-            <div className={styles.description}>{props.description}</div>
+            <div className={styles.description}>
+              {props.description ? (
+                props.description
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <SkeletonText width={450} />
+                  <SkeletonText width={450} />
+                  <SkeletonText width={350} />
+                </div>
+              )}
+            </div>
           </div>
 
           <div>

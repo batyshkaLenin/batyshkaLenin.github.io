@@ -1,0 +1,41 @@
+.skeleton {
+  display: inline-flex;
+  height: 1.2rem;
+  justify-content: center;
+  width: fit-content;
+  padding: 0 2px;
+}
+
+.skeletonBackground {
+  background-color: darken(#fefefe, 80);
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 1rem;
+  position: relative;
+  vertical-align: baseline;
+  overflow: hidden;
+}
+
+.skeletonForeground {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.animated {
+  animation: slide 2s infinite;
+  background: linear-gradient(
+      100deg,
+      rgba(darken(#fefefe, 70), 0) 30%,
+      rgba(darken(#fefefe, 70), 0.8) 50%,
+      rgba(darken(#fefefe, 70), 0) 70%
+    )
+    no-repeat left -35px bottom 0;
+  background-size: 35px 100%;
+}
+
+@keyframes slide {
+  to {
+    background-position: right -35px bottom 0;
+  }
+}

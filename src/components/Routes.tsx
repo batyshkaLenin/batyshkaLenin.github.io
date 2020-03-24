@@ -7,7 +7,7 @@ import Post from 'src/pages/Post'
 
 const Routes = React.memo(() => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/">
           <Main />
