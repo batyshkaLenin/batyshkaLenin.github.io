@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import BlogApi, { BlogPost } from 'src/classes/services/api/BlogApi'
-import Layout from '../components/Layout'
-import Loader from '../components/Loader'
+import { BlogPost } from 'src/classes/services/api/BlogApi'
+import Layout from 'src/components/Layout'
+import Loader from 'src/components/Loader'
 
 interface BlogDetailProps {
   match: any
+  store: any
 }
 
 export const Post = (props: BlogDetailProps) => {
@@ -13,8 +14,8 @@ export const Post = (props: BlogDetailProps) => {
   const [post, setPost] = React.useState<BlogPost>({} as BlogPost)
 
   React.useEffect(() => {
-    BlogApi.fetchBlogById(slug).then((result: BlogPost) => setPost(result))
-  }, [slug])
+    props.store.getPost(slug).then((post: BlogPost) => setPost(post))
+  }, [slug, props.store])
 
   return (
     <Layout>
