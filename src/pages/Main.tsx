@@ -3,20 +3,18 @@ import Layout from 'src/components/Layout'
 import styles from './Main.module.scss'
 
 const Main = () => {
+  const [shake, setShake] = React.useState<boolean>(false)
   const play = () => {
-    const speaker = document.getElementById('speaker')
     if (localStorage.getItem('muted') === 'true') {
-      if (speaker) {
-        speaker.classList.add('shake')
-      }
-      setTimeout(() => speaker && speaker.classList.remove('shake'), 1000)
+      setShake(true)
+      setTimeout(() => setShake(false), 1000)
     } else {
       document.getElementsByTagName('audio')[0].play()
     }
   }
   const pause = () => document.getElementsByTagName('audio')[0].pause()
   return (
-    <Layout>
+    <Layout shakeMute={shake}>
       <section className={styles.page}>
         <section className={styles.text}>
           <article>

@@ -78,39 +78,42 @@ input:checked + .slider:before {
   overflow: hidden;
   display: inline-block;
   margin-right: 10px;
-  span {
-    display: block;
-    width: 4px;
-    height: 4px;
-    background: var(--color-text);
-    margin: 5.5px 0 0 1px;
-    &:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-color: transparent var(--color-text) transparent transparent;
-      border-width: 5px 7px 5px 7.5px;
-      left: -5.5px;
-      top: 2.5px;
-    }
-    &:before {
-      transform: rotate(45deg);
-      border-radius: 0 25px 0 0;
-      content: '';
-      position: absolute;
-      width: 2.5px;
-      height: 2.5px;
-      border-style: double;
-      border-color: var(--color-text);
-      border-width: 3.5px 3.5px 0 0;
-      left: 9px;
-      top: 4.5px;
-      transition: all 0.2s ease-out;
-    }
-  }
 }
+.speaker span {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: var(--color-text);
+  margin: 5.5px 0 0 1px;
+}
+
+.speaker span:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent var(--color-text) transparent transparent;
+  border-width: 5px 7px 5px 7.5px;
+  left: -5.5px;
+  top: 2.5px;
+}
+
+.speaker span:before {
+  transform: rotate(45deg);
+  border-radius: 0 25px 0 0;
+  content: '';
+  position: absolute;
+  width: 2.5px;
+  height: 2.5px;
+  border-style: double;
+  border-color: var(--color-text);
+  border-width: 3.5px 3.5px 0 0;
+  left: 9px;
+  top: 4.5px;
+  transition: all 0.2s ease-out;
+}
+
 .speaker:hover span:before {
   transform: scale(0.8) translate(-3px, 0) rotate(42deg);
 }

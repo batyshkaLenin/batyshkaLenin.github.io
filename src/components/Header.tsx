@@ -6,6 +6,7 @@ import classNames from 'classnames'
 interface IProps {
   theme: string
   changeTheme: any
+  shakeMute?: boolean
 }
 
 const Header = (props: IProps) => {
@@ -49,7 +50,11 @@ const Header = (props: IProps) => {
         {!isTouchDevice() && (
           <a
             id="speaker"
-            className={classNames(styles.speaker, mute ? styles.mute : '')}
+            className={classNames(
+              styles.speaker,
+              mute ? styles.mute : '',
+              props.shakeMute ? styles.shake : ''
+            )}
             onClick={() => toggleMute(!mute)}
           >
             <span />

@@ -6,6 +6,7 @@ import classNames from 'classnames'
 
 interface IProps {
   children: any
+  shakeMute?: boolean
 }
 
 const Layout = (props: IProps) => {
@@ -45,7 +46,11 @@ const Layout = (props: IProps) => {
         theme === 'dark' ? 'root dark' : 'root light'
       )}
     >
-      <Header theme={theme} changeTheme={changeTheme} />
+      <Header
+        shakeMute={props.shakeMute}
+        theme={theme}
+        changeTheme={changeTheme}
+      />
       <ErrorBoundary>
         <main>{props.children}</main>
       </ErrorBoundary>
