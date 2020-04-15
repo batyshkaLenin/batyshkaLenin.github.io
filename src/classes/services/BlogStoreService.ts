@@ -1,11 +1,11 @@
-import { observable } from 'mobx'
+import { action, observable } from 'mobx'
 import BlogApi, { BlogPost } from './api/BlogApi'
 
 class BlogStoreService {
   @observable posts: BlogPost[] = []
   @observable isLoading: boolean = true
 
-  async loadPosts(): Promise<BlogPost[]> {
+  @action async loadPosts(): Promise<BlogPost[]> {
     this.isLoading = true
     if (!this.posts.length) {
       const fetchedPosts = await BlogApi.fetchBlogEntries()
@@ -15,7 +15,7 @@ class BlogStoreService {
     return this.posts
   }
 
-  async getPost(slug: string): Promise<BlogPost> {
+  @action async getPost(slug: string): Promise<BlogPost> {
     const post = this.posts.find((post: BlogPost) => post.slug === slug)
     if (post) {
       return post
@@ -24,7 +24,7 @@ class BlogStoreService {
     }
   }
 
-  async loadPost(slug: string): Promise<BlogPost> {
+  @action async loadPost(slug: string): Promise<BlogPost> {
     this.isLoading = true
     const fetchedPost = await BlogApi.fetchBlogById(slug)
     this.updatePostFromServer(fetchedPost)
@@ -32,7 +32,7 @@ class BlogStoreService {
     return fetchedPost
   }
 
-  updatePostFromServer(blogPost: BlogPost) {
+  @action updatePostFromServer(blogPost: BlogPost) {
     let post = this.posts.find((post: BlogPost) => post.id === blogPost.id)
     if (post) {
       const newPost = {
