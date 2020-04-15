@@ -26,11 +26,11 @@ const Menu = () => {
         <li
           className={classNames(
             styles.menuItem,
-            path === '/music' && styles.active
+            path === '/creation' && styles.active
           )}
         >
-          <NavLink to="/music" className="menu-item">
-            музыка
+          <NavLink to="/creation" className="menu-item">
+            творчество
           </NavLink>
         </li>
       </ul>

@@ -4,6 +4,7 @@ import { BlogPost } from 'src/classes/services/api/BlogApi'
 import Layout from 'src/components/Layout'
 import Loader from 'src/components/Loader'
 import { inject, observer } from 'mobx-react'
+import WithTitle from '../components/WithTitle'
 
 export const Post = inject('blogStore')(
   observer(({ blogStore, match }: any) => {
@@ -17,15 +18,17 @@ export const Post = inject('blogStore')(
     return (
       <Layout>
         {post ? (
-          <article className="post-full post">
-            <header className="post-full-header">
-              <h1 className="post-full-title">{post.title}</h1>
-              <div className="text-center meta">{post.publishedDate}</div>
-            </header>
-            <section className="post-full-content">
-              <ReactMarkdown source={post.body} />
-            </section>
-          </article>
+          <WithTitle title={`${post.title} | Блог Александра Сидоренко`}>
+            <article className="post-full post">
+              <header className="post-full-header">
+                <h1 className="post-full-title">{post.title}</h1>
+                <div className="text-center meta">{post.publishedDate}</div>
+              </header>
+              <section className="post-full-content">
+                <ReactMarkdown source={post.body} />
+              </section>
+            </article>
+          </WithTitle>
         ) : (
           <Loader />
         )}
