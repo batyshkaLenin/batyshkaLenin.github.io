@@ -13,39 +13,27 @@ const Footer = () => {
       <section className={styles.contacts}>
         <ul className={styles.contactList}>
           <li className={styles.contactItem}>
-            <a
-              className="h-card"
-              href="https://github.com/batyshkaLenin"
-              rel="me"
-            >
+            <a href="https://github.com/batyshkaLenin" rel="me">
               <i className="icon-github-circled" />
             </a>
           </li>
           <li className={styles.contactItem}>
-            <a className="h-card" href="https://vk.com/batyshkalenin" rel="me">
+            <a href="https://vk.com/batyshkalenin" rel="me">
               <i className="icon-vkontakte" />
             </a>
           </li>
           <li className={styles.contactItem}>
-            <a
-              className="h-card"
-              href="https://soundcloud.com/better_not_be_born"
-              rel="me"
-            >
+            <a href="https://soundcloud.com/better_not_be_born" rel="me">
               <i className="icon-soundcloud" />
             </a>
           </li>
           <li className={styles.contactItem}>
-            <a
-              className="h-card"
-              href="https://twitter.com/batyshkaLenin"
-              rel="me"
-            >
+            <a href="https://twitter.com/batyshkaLenin" rel="me">
               <i className="icon-twitter" />
             </a>
           </li>
           <li className={styles.contactItem}>
-            <a className="h-card" href="https://t.me/batyshka_Lenin" rel="me">
+            <a href="https://t.me/batyshka_Lenin" rel="me">
               <i className="icon-telegram" />
             </a>
           </li>
