@@ -36,6 +36,7 @@ p {
   margin: 50px;
   display: flex;
   flex-direction: column;
+  cursor: default;
 }
 
 @media only screen and (max-device-width: 480px) {
