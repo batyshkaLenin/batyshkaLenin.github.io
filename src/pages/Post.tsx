@@ -13,18 +13,29 @@ export const Post = inject('blogStore')(
 
     React.useEffect(() => {
       blogStore.getPost(slug).then((post: BlogPost) => setPost(post))
+      console.log(post)
     }, [slug, blogStore])
 
     return (
       <Layout>
         {post ? (
           <WithTitle title={`${post.title} | Блог Александра Сидоренко`}>
-            <article className="post-full post">
+            <article className="post-full post h-entry">
               <header className="post-full-header">
-                <h1 className="post-full-title">{post.title}</h1>
-                <div className="text-center meta">{post.publishedDate}</div>
+                <h1 className="post-full-title p-name">{post.title}</h1>
+                <a
+                  className="u-url"
+                  href={`https://alexandr-sidorenko.me/post/${slug}`}
+                >
+                  <time
+                    className="text-center meta dt-published"
+                    dateTime={new Date(post.publishedDate).toJSON()}
+                  >
+                    {post.publishedDate}
+                  </time>
+                </a>
               </header>
-              <section className="post-full-content">
+              <section className="post-full-content e-content">
                 <ReactMarkdown source={post.body} />
               </section>
             </article>
