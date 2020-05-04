@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { BlogPost } from 'src/classes/services/api/BlogApi'
 import Layout from 'src/components/Layout'
@@ -9,11 +9,11 @@ import WithTitle from '../components/WithTitle'
 export const Post = inject('blogStore')(
   observer(({ blogStore, match }: any) => {
     const { slug } = match.params
-    const [post, setPost] = React.useState<BlogPost>({} as BlogPost)
 
-    React.useEffect(() => {
+    const [post, setPost] = useState<BlogPost>({} as BlogPost)
+
+    useEffect(() => {
       blogStore.getPost(slug).then((post: BlogPost) => setPost(post))
-      console.log(post)
     }, [slug, blogStore])
 
     return (

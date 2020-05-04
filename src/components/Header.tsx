@@ -12,7 +12,7 @@ const Header = inject('localStore')(
       <header>
         <Menu />
         <div className={styles.settings}>
-          <a
+          <span
             id="speaker"
             className={classNames(
               styles.speaker,
@@ -22,7 +22,7 @@ const Header = inject('localStore')(
             onClick={changeSound}
           >
             <span />
-          </a>
+          </span>
           <label id="switch" className={styles.switch}>
             <input
               type="checkbox"

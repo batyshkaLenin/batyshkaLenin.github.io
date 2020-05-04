@@ -7,10 +7,12 @@ import classNames from 'classnames'
 const Main = inject('localStore')(
   observer(({ localStore }: any) => {
     const { sound, shakeSound } = localStore
+
     const play = () =>
       sound ? shakeSound() : document.getElementsByTagName('audio')[0].play()
 
     const pause = () => document.getElementsByTagName('audio')[0].pause()
+
     return (
       <Layout>
         <section className={classNames(styles.page, 'h-card')}>

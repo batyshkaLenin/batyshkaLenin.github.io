@@ -45,11 +45,11 @@ class LocalStorageStoreService {
   @action setSound(mute: boolean) {
     this.sound = mute
     localStorage.setItem('muted', `${mute}`)
-    const audios = document.getElementsByTagName('audio')
+    const audios: HTMLCollectionOf<HTMLAudioElement> = document.getElementsByTagName(
+      'audio'
+    )
     if (audios.length) {
-      for (let audio of <any>audios) {
-        audio.volume = mute ? 0 : 1
-      }
+      Array.from(audios, audio => (audio.volume = mute ? 0 : 1))
     }
   }
 }

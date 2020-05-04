@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from 'src/components/Layout'
 import { BlogPost } from 'src/classes/services/api/BlogApi'
 import PostList from 'src/components/PostsList'
@@ -6,10 +6,12 @@ import { inject, observer } from 'mobx-react'
 
 const Blog = inject('blogStore')(
   observer(({ blogStore }: any) => {
-    const [posts, setPosts] = React.useState<BlogPost[]>([...new Array(4)])
-    React.useEffect(() => {
+    const [posts, setPosts] = useState<BlogPost[]>([...new Array(4)])
+
+    useEffect(() => {
       blogStore.loadPosts().then((results: BlogPost[]) => setPosts(results))
     }, [blogStore])
+
     return (
       <Layout>
         {posts.map((post: BlogPost | undefined, index) => (
